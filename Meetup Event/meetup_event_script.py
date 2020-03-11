@@ -25,7 +25,8 @@ while True:
         time.sleep(6)
         
         try:
-            driver.find_element_by_link_text("See all").click()
+            see_all_btn = driver.find_element_by_link_text("See all")
+            driver.execute_script("arguments[0].click();", see_all_btn)
             
         except Exception as e:
             print(e)
